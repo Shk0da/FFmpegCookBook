@@ -1,0 +1,8 @@
+Rename all files in folder by order:
+> ls -v | cat -n | while read n f; do mv -n "$f" "$n.mp3"; done
+
+Merge all mp3 file into one:
+> ffmpeg -i "concat:1.mp3|concat:2.mp3|concat:3.mp3|concat:4.mp3|concat:5.mp3|concat:6.mp3|concat:7.mp3|concat:8.mp3|concat:9.mp3|concat:10.mp3|concat:11.mp3|concat:12.mp3|concat:13.mp3|concat:14.mp3|concat:15.mp3|concat:16.mp3|concat:17.mp3|concat:18.mp3|concat:19.mp3|concat:20.mp3|concat:21.mp3|concat:22.mp3|concat:23.mp3|concat:24.mp3|concat:25.mp3|concat:26.mp3|concat:27.mp3|concat:28.mp3|concat:29.mp3|concat:30.mp3|concat:31.mp3|concat:32.mp3|concat:33.mp3|concat:34.mp3|concat:35.mp3|concat:36.mp3|concat:37.mp3|concat:38.mp3|concat:39.mp3|concat:40.mp3|concat:41.mp3|concat:42.mp3|concat:43.mp3|concat:44.mp3|concat:45.mp3|concat:46.mp3|concat:47.mp3|concat:48.mp3|concat:49.mp3|concat:50.mp3|concat:51.mp3|concat:52.mp3|concat:53.mp3|concat:54.mp3|concat:55.mp3|concat:56.mp3|concat:57.mp3|concat:58.mp3|concat:59.mp3|concat:60.mp3|concat:61.mp3|concat:62.mp3|concat:63.mp3|concat:64.mp3|concat:65.mp3|concat:66.mp3|concat:67.mp3|concat:68.mp3|concat:69.mp3|concat:70.mp3|concat:71.mp3|concat:72.mp3|concat:73.mp3|concat:74.mp3|concat:75.mp3|concat:76.mp3|concat:77.mp3|concat:78.mp3|concat:79.mp3|concat:80.mp3|concat:81.mp3|concat:82.mp3|concat:83.mp3|concat:84.mp3|concat:85.mp3|concat:86.mp3|concat:87.mp3|concat:88.mp3|concat:89.mp3|concat:90.mp3|concat:91.mp3|concat:92.mp3|concat:93.mp3|concat:94.mp3|concat:95.mp3|concat:96.mp3|concat:97.mp3|concat:98.mp3|concat:99.mp3|concat:100.mp3" -acodec copy audio.mp3
+
+Create mp4 with background:
+> ffmpeg -loop 1 -i bg.png -i audio.mp3 -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest -vf scale=1280:720 video.mp4
